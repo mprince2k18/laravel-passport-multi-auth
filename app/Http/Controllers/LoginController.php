@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
@@ -79,5 +80,19 @@ class LoginController extends Controller
         }
 
     }
+
+
+    public function user_me()
+    {
+       dd(auth()->user());
+    }
+
+
+    public function customer_me()
+    {
+       dd(auth()->user());
+    }
+
+
     //ENDS
 }

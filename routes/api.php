@@ -11,3 +11,12 @@ Route::post('user/login',[LoginController::class, 'user_login'])->name('user.log
 Route::post('customer/register',[RegisterController::class, 'customer_register'])->name('customer.register');
 Route::post('customer/login',[LoginController::class, 'customer_login'])->name('customer.login');
 
+Route::middleware(['auth:user-api','scopes:user'])->group(function () {
+    Route::get('user/me',[LoginController::class, 'user_me'])->name('user.me');
+});
+
+Route::middleware(['auth:customer-api','scopes:customer'])->group(function () {
+    Route::get('customer/me',[LoginController::class, 'customer_me'])->name('customer.me');
+});
+
+
