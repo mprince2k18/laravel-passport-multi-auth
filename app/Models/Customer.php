@@ -13,8 +13,16 @@ class Customer extends Authenticatable
     use HasFactory, Notifiable, HasApiTokens;
 
     /* Telling Laravel that the id field is not mass assignable. */
-    protected $guarded = [
-        'id'
+    protected $guarded = ['id'];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
     ];
 
 }

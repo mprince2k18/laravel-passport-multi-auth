@@ -81,16 +81,26 @@ class LoginController extends Controller
 
     }
 
-
+    /**
+     * It returns the user id of the logged in user.
+     * 
+     * @return The user id of the currently logged in user.
+     */
     public function user_me()
     {
-       dd(auth()->user());
+       /* It returns the authenticated user. */
+       return auth()->user();
     }
 
-
+    /**
+     * It returns the authenticated user
+     * 
+     * @return The user that is currently logged in.
+     */
     public function customer_me()
     {
-       dd(auth()->user());
+       /* It returns the authenticated user. */
+       return auth()->user();
     }
 
 
